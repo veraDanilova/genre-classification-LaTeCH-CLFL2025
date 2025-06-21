@@ -1,0 +1,15 @@
+.env
+
+__pycache__/
+
+.vscode/
+
+prepared_data_final/
+zero-shot_data/
+zero-shot_data_preprocessed/
+results_zero-shot/
+data_few-shot-data/
+
+balance_and_split.py
+filter.py
+prepare_data_for_mlm_one_process.py
