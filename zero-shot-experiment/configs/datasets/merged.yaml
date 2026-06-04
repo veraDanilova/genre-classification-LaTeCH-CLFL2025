@@ -1,0 +1,26 @@
+# ---------------------------------------------------------------------------
+# Dataset preparation config: merged (CORE + FTD + UDM combined)
+# ---------------------------------------------------------------------------
+dataset: merged
+
+data_dir: zero-shot_data
+download: false
+
+mapping: cl_map_v3
+
+# Restrict to Germanic languages (recommended for ActDisease)
+language_family_filter: ["IE.Germanic"]
+
+chunking: true
+model_name: FacebookAI/xlm-roberta-base
+
+remove_punctuation: false
+remove_short: true
+
+# Balance AFTER merging all three sources
+balance: true
+
+test_size: 0.2
+random_state: 42
+
+output_dir: data/prepared

@@ -1,0 +1,30 @@
+# ---------------------------------------------------------------------------
+# Training config: FacebookAI/xlm-roberta-base (MLM-finetuned on ActDisease)
+# ---------------------------------------------------------------------------
+
+# Path to the domain-adapted checkpoint produced by MLM-finetuning/run_mlm.py
+# Adjust to the actual best checkpoint subfolder after MLM training.
+checkpoint: ../MLM-finetuning/output/xlmroberta-ft-mlm/best_model
+
+# Data
+data_dir: data_few-shot-data
+train_file: all__.train.csv        # overridden by run_experiments.sh per size
+dev_file:   few_shot.dev.csv
+
+# Output root (a run-specific subfolder is created automatically)
+output_dir: output
+
+# Training hyperparameters
+learning_rate: 1.0e-5
+batch_size: 8
+num_epochs: 5
+weight_decay: 0.0
+seed: 1234
+
+# Dropout (applied on top of the MLM checkpoint)
+hidden_dropout_prob: 0.1
+attention_probs_dropout_prob: 0.25
+
+# Weights & Biases logging (set to true and configure wandb_project to enable)
+use_wandb: false
+wandb_project: few-shot-xlmroberta-actdisease

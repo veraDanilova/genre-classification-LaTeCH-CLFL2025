@@ -1,0 +1,26 @@
+# ---------------------------------------------------------------------------
+# Training config: FacebookAI/xlm-roberta-base
+# ---------------------------------------------------------------------------
+model_name: FacebookAI/xlm-roberta-base
+
+# Path to train.csv produced by prepare_dataset.py
+train_file: data/prepared/UDM__lff__v3__chunked__balanced/train.csv
+
+# Optional: path to held-out test CSV for final evaluation
+test_file:  data/prepared/UDM__lff__v3__chunked__balanced/test.csv
+
+# Training hyperparameters
+learning_rate: 1.0e-5
+batch_size: 8
+num_epochs: 5
+weight_decay: 0.01
+
+# Internal train/validation split fraction (applied to train.csv)
+valid_split: 0.1
+random_state: 42
+
+# Set to true to chunk long texts at training time (if not done during preparation)
+chunk_at_training: false
+
+# Root output directory; a run-specific subdirectory will be created automatically
+output_dir: output

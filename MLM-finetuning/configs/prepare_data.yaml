@@ -1,0 +1,22 @@
+# ---------------------------------------------------------------------------
+# Configuration for prepare_data.py
+# ---------------------------------------------------------------------------
+
+# Path to the raw ActDisease CSV (columns: text, journal)
+input_file: /../actdisease_dataset.csv
+
+# Tokenizer used only to measure sequence lengths (not for training)
+tokenizer_name: FacebookAI/xlm-roberta-base
+
+# Chunking: documents longer than 2*(model_max_length-2) tokens are split
+chunk_size: 450      # maximum tokens per chunk
+chunk_overlap: 20    # overlapping tokens between consecutive chunks
+separators: [".", ";", ":"]
+
+# Train / validation split
+test_size: 0.2
+random_state: 1234
+
+# Output paths (relative to MLM-finetuning/)
+train_output: data/train_dataset_linebyline.txt
+val_output: data/val_dataset_linebyline.txt

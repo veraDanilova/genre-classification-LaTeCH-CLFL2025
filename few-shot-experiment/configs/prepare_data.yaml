@@ -1,0 +1,27 @@
+# ---------------------------------------------------------------------------
+# Configuration for prepare_data.py
+# ---------------------------------------------------------------------------
+
+# Full annotated CSV with columns: language, label, text
+# This is the complete labelled ActDisease corpus.
+input_file: data_few-shot-data/all__.train.csv
+
+# Optional: pre-existing held-out dev/test file.
+# If set, this file is used as-is and the full input_file becomes the train pool.
+# If null, a test_size fraction of input_file is held out automatically.
+test_file: data_few-shot-data/few_shot.dev.csv
+
+# Output directory for generated splits
+output_dir: data_few-shot-data
+
+# Few-shot subset sizes to generate
+sizes: [100, 200, 300, 400, 500]
+
+# Fraction of input used as dev/test when test_file is null
+test_size: 0.3
+
+# Column name for genre labels
+label_col: label
+
+# Random seed for reproducibility
+random_state: 42

@@ -1,0 +1,27 @@
+# ---------------------------------------------------------------------------
+# Dataset preparation config: UDM (Universal Dependencies Multi-Genre)
+# ---------------------------------------------------------------------------
+dataset: UDM
+
+# Place the UD-MULTIGENRE corpus under zero-shot_data/UDM/
+# Structure: zero-shot_data/UDM/<genre>/<UD_Language-Treebank>/*-train.txt
+# See README for download instructions.
+data_dir: zero-shot_data
+download: false   # UDM must be downloaded manually (see README)
+
+mapping: cl_map_v3
+
+# UDM covers many languages; restrict to Germanic for ActDisease experiments
+language_family_filter: ["IE.Germanic"]
+
+chunking: true
+model_name: FacebookAI/xlm-roberta-base
+
+remove_punctuation: false
+remove_short: true
+balance: true
+
+test_size: 0.2
+random_state: 42
+
+output_dir: data/prepared

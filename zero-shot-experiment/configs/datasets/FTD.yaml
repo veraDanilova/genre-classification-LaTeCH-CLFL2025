@@ -1,0 +1,25 @@
+# ---------------------------------------------------------------------------
+# Dataset preparation config: FTD (English + Russian)
+# ---------------------------------------------------------------------------
+dataset: FTD
+
+data_dir: zero-shot_data
+download: false
+
+mapping: cl_map_v3
+
+# FTD covers English (IE.Germanic) and Russian (IE.Slavic)
+# Use null to keep both languages, or filter:
+language_family_filter: null
+
+chunking: true
+model_name: FacebookAI/xlm-roberta-base
+
+remove_punctuation: false
+remove_short: true
+balance: true
+
+test_size: 0.2
+random_state: 42
+
+output_dir: data/prepared

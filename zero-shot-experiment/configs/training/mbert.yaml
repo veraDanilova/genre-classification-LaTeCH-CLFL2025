@@ -1,0 +1,19 @@
+# ---------------------------------------------------------------------------
+# Training config: google-bert/bert-base-multilingual-cased  (mBERT)
+# ---------------------------------------------------------------------------
+model_name: google-bert/bert-base-multilingual-cased
+
+train_file: data/prepared/UDM__lff__v3__chunked__balanced/train.csv
+test_file:  data/prepared/UDM__lff__v3__chunked__balanced/test.csv
+
+learning_rate: 1.0e-5
+batch_size: 8
+num_epochs: 5
+weight_decay: 0.01
+
+valid_split: 0.1
+random_state: 42
+
+chunk_at_training: false
+
+output_dir: output

@@ -1,0 +1,13 @@
+{
+    "model_name_or_path": "google-bert/bert-base-multilingual-cased",
+    "train_file": "data/train_dataset_linebyline.txt",
+    "validation_file": "data/val_dataset_linebyline.txt",
+    "line_by_line": true,
+    "do_train": true,
+    "do_eval": true,
+    "per_device_train_batch_size": 8,
+    "per_device_eval_batch_size": 8,
+    "num_train_epochs": 20,
+    "save_strategy": "epoch",
+    "output_dir": "output/mbert-ft-mlm"
+}

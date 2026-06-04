@@ -1,0 +1,37 @@
+# ---------------------------------------------------------------------------
+# Dataset preparation config: CORE (English, Finnish, Swedish, French)
+# ---------------------------------------------------------------------------
+dataset: CORE
+
+# Directory containing downloaded raw data (CORE/, FinCORE/, SweCORE/, FreCORE/)
+data_dir: zero-shot_data
+
+# Set to true to download raw data before processing
+download: false
+
+# Label mapping version (cl_map_v1 / cl_map_v2 / cl_map_v3)
+mapping: cl_map_v3
+
+# Restrict to specific language families (null = all languages)
+# Use ["IE.Germanic"] to include only Germanic languages (English, Swedish, etc.)
+language_family_filter: ["IE.Germanic"]
+
+# Chunk texts that exceed 512 tokens
+chunking: true
+model_name: FacebookAI/xlm-roberta-base   # tokenizer used for length measurement
+
+# Strip non-alphanumeric punctuation after chunking
+remove_punctuation: false
+
+# Remove texts shorter than 5 words
+remove_short: true
+
+# Balance by label (two-level: genre → sublabel)
+balance: true
+
+# Train / test split
+test_size: 0.2
+random_state: 42
+
+# Where to write train.csv / test.csv
+output_dir: data/prepared
